@@ -1,0 +1,24 @@
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+<body>
+	{%if 'username' not in session %}
+				<a href="{{url_for('showLogin')}}">Click Here to Login </a>
+				{% else %}
+				<a href="{{url_for('gdisconnect')}}">Logout </a>
+				{% endif %}
+
+<h1> Are you sure you want to delete {{i.name}}? </h1>
+
+		<div>
+			<h3> {{i.name}}</h3>
+			<p> {{i.description}}</p>
+			<form action="{{ url_for('deletei', category_id=i.category_id, itemid=i.id)}}" method = 'post'>
+				<input type='submit', value = 'Delete'>
+			</form>
+		<div>
+<a href = "{{ url_for('showitem', category_id = i.category_id)}}"> Cancel </a>
+</body>
+
+</html>

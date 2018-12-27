@@ -1,0 +1,18 @@
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	{%if 'username' not in session %}
+                        <a href="{{url_for('showLogin')}}">Click Here to Login </a>
+                        {% else %}
+                        <a href="{{url_for('gdisconnect')}}">Logout </a>
+                        {% endif %}
+<h1>Mobile Catalog</h1>
+
+<h1>Category</h1>
+	{% for i in cat %}
+	
+		<a href = "{{url_for('showitem', category_id = i.id)}}">	
+			<p>{{i.name}}</p>
+			
+		</a>
+	{% endfor %}

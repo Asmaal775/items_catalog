@@ -1,0 +1,28 @@
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	</head>
+<body>
+	{%if 'username' not in session %}
+				<a href="{{url_for('showLogin')}}">Click Here to Login </a>
+				{% else %}
+				<a href="{{url_for('gdisconnect')}}">Logout </a>
+				{% endif %}
+
+<h1> New Menu Item </h1>
+
+<form action="{{url_for('addi', category_id=category_id)}}" method = 'POST'>
+
+<p>Name:</p>
+
+<input type='text' size='30' name='name'>
+
+<p>description:</p>
+<input type='text' size='50' name='description'>
+
+<input type='submit' value='Create'>
+
+</form>
+
+</body>
+</html>
