@@ -1,6 +1,4 @@
-# items_catalog
 This is the fourth project of Udacity: Full Stack Web Developer Nanodegree
-
 # Project: Item Catalog
 This is the fourth project of Udacity: Full Stack Web Developer Nanodegree
 
